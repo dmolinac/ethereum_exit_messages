@@ -6,13 +6,13 @@ The scripts have been developed as part of a research project of the The [Securi
 
 ## Scripts
 
-### 1. `generate_exit_message.py`
+### 1. `generate_exit_message_holesky.py`
 
-This script generates a signed `VoluntaryExit` message for a specified validator.
+This script generates a signed `VoluntaryExit` message for a specified validator in Holesky.
 
 #### Usage
 ```bash
-python generate_exit_message.py --mnemonic <mnemonic> --validator_index <validator_index> [--epoch <epoch>] [--private_key_hex <private_key_hex>] [--fork_version <fork_version>] [--genesis_validators_root <genesis_validators_root>]
+python generate_exit_message_holesky.py --mnemonic <mnemonic> --validator_index <validator_index> [--epoch <epoch>] [--private_key_hex <private_key_hex>] [--fork_version <fork_version>] [--genesis_validators_root <genesis_validators_root>]
 ```
 
 **Parameters**
@@ -29,16 +29,16 @@ python generate_exit_message.py --mnemonic <mnemonic> --validator_index <validat
 To generate an exit message for a validator using its mnemonic:
 
 ```bash
-python generate_exit_message.py --mnemonic "average visual pipe crowd reform alcohol music afraid fee pizza copy divide fish poet hurdle cousin either work pipe scout oppose amount creek canoe" --validator_index 1887870
+python generate_exit_message.py --mnemonic "average visual pipe crowd reform alcohol music afraid fee pizza copy divide fish poet hurdle cousin either work pipe scout oppose amount creek canoe" --validator_index 1845650
 ```
 
-### 2. `validate_exit_message.py`
+### 2. `validate_exit_message_holesky.py`
 
 This script validates a `VoluntaryExit` message against the provided parameters.
 
 #### Usage
 ```bash
-python validate_exit_message.py --message <message_json> --validator_index <validator_index> --epoch <epoch> [--fork_version <fork_version>] [--genesis_validators_root <genesis_validators_root>]
+python validate_exit_message_holesky.py --message <message_json> --validator_index <validator_index> --epoch <epoch> [--fork_version <fork_version>] [--genesis_validators_root <genesis_validators_root>]
 ```
 
 **Parameters**
@@ -54,8 +54,71 @@ python validate_exit_message.py --message <message_json> --validator_index <vali
 To validate an exit message:
 
 ```bash
-python validate_exit_message.py --message '{"message":{"epoch":"95962","validator_index":"1887870"},"signature":"0xa4b2c3d4..."}' --validator_index 1887870 --epoch 95962
+python validate_exit_message.py --message '{"message":{"epoch":"95362","validator_index":"1845650"},"signature":"0xa4b2c3d4..."}' --validator_index 1887870 --epoch 95362
 ```
+
+### 3. `calculate_current_epoch_holesky.py`
+This script calculates the current epoch for the Ethereum **Holesky testnet** based on the genesis time and the slot duration.
+
+#### Usage
+```bash
+python calculate_current_epoch_holesky.py
+```
+
+**Output**
+Displays the current epoch number on the Holesky testnet.
+
+#### Example
+```bash
+python calculate_current_epoch_holesky.py
+```
+Output:
+```
+Current epoch on Holesky: 95362
+```
+
+
+### 4.  `generate_ethereum_public_key_from_private_key.py`
+This script generates an Ethereum **public key** from a given private key. It also compresses the public key using the **SHA-384** hashing algorithm for a compact representation.
+
+#### Usage
+The private key is defined directly in the script:
+```python
+private_key_hex = "0x5c012ef45dc6549ae3baf514ebc465c07c558a5f1e76bf6adda8cf92454b102d"
+```
+
+Run the script:
+```bash
+python generate_ethereum_public_key_from_private_key.py
+```
+
+**Output**
+Displays the compressed public key (96 characters):
+```
+Public Key (96 chars): <compressed_public_key>
+```
+
+### 5.  `derive_ethereum_private_key_from_mnemonic.py`
+This script derives an Ethereum **private key** from a given **mnemonic phrase** using the **BLS12-381** key derivation standard and a hierarchical derivation path.
+
+#### Usage
+The mnemonic and derivation path are defined directly in the script:
+```python
+mnemonic = "poet hurdle cousin either average visual pipe crowd reform alcohol music afraid fee ..."
+path = "m/12381/3600/0/0/0"
+```
+
+Run the script:
+```bash
+python derive_ethereum_private_key_from_mnemonic.py
+```
+
+**Output**
+Displays the derived private key in hexadecimal format:
+```
+Private Key (Hex): <derived_private_key>
+```
+
 
 ### Network Defaults
 
