@@ -2,7 +2,7 @@
 
 This repository provides a set of Python scripts to generate and validate `VoluntaryExit` messages for Ethereum validators.
 
-The scripts have been developed as part of a research project of the The Security of Networks and Distributed Applications (SeNDA) group, a research group within the Department of Information and Communications Engineering of the Universitat Autònoma de Barcelona.
+The scripts have been developed as part of a research project of the The [Security of Networks and Distributed Applications (SeNDA) group](https://senda.uab.cat/), a research group within the [Department of Information and Communications Engineering](https://deic.uab.cat/) of the [Universitat Autònoma de Barcelona](https://www.uab.cat/).
 
 ## Scripts
 
