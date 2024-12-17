@@ -132,6 +132,24 @@ This repository includes default values for the most common Ethereum networks:
   - Fork version: `0x00000000`
   - Genesis validators root: `0x22c1f297e2614b3eefc721e389d2f29ec82d6c8b3fa09f88da21d9a3eab82eac`
 
+### Installation
+
+To install the required Python dependencies for the scripts, ensure you have `pip` installed. Then, run the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+This will install all the necessary libraries, including:
+
+- `argparse`: For handling command-line arguments.
+- `eth-keys`: For working with Ethereum keys.
+- `eth-utils`: For utility functions related to Ethereum.
+- `milagro-bls-binding`: For BLS cryptographic operations.
+- `mnemonic`: For generating and validating BIP-39 mnemonics.
+
+Make sure you are using a Python version compatible with these dependencies (recommended: Python 3.8 or higher).
+
 ### Contributing
 
 Contributions are welcome! If you encounter any issues, feel free to open an issue or submit a pull request. Ensure your code follows the style guidelines and includes appropriate tests.
