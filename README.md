@@ -43,18 +43,18 @@ python validate_exit_message_holesky.py --message <message_json> --validator_ind
 
 **Parameters**
 
-- `--message`: The JSON string containing the `VoluntaryExit` message to validate.
-- `--validator_index`: The index of the validator. This parameter is mandatory.
-- `--epoch`: The epoch at which the exit message is to be validated.
-- `--fork_version`: The fork version of the network. Defaults to `0x04017000` (Holesky).
-- `--genesis_validators_root`: The genesis validators root of the network. Defaults to the value for Holesky.
+- `--exit_message` (Mandatory): Path to a JSON file or a JSON string containing the `VoluntaryExit` message to validate.
+- `--public_key_hex` (Mandatory): Validator's public key in hexadecimal format.
+- `--fork_version` (Optional): The fork version of the network. Defaults to `0x04017000` (Holesky).
+- `--genesis_validators_root` (Optional): The genesis validators root of the network. Defaults to the value "0x9143aa7c615a7f7115e2b6aac319c03529df8242ae705fba9df39b79c59fa8b1" for Holesky.
+- `--voluntary_exit_domain_type` (Optional): Voluntary exit domain type in hexadecimal format. Defaults to the value "0x04000000" for Holesky.
 
 #### Example
 
 To validate an exit message:
 
 ```bash
-python validate_exit_message.py --message '{"message":{"epoch":"95362","validator_index":"1845650"},"signature":"0xa4b2c3d4..."}' --validator_index 1887870 --epoch 95362
+python validate_exit_message.py --exit_message '{"message":{"epoch":"95362","validator_index":"1845650"},"signature":"0xa4b2c3d4..."}' --public_key_hex 0x1234...
 ```
 
 ### 3. `calculate_current_epoch_holesky.py`
