@@ -142,11 +142,11 @@ pip install -r requirements.txt
 
 This will install all the necessary libraries, including:
 
-- `argparse`: For handling command-line arguments.
+- `eth2spec`: For simulating and working with the Ethereum 2.0 specification, including SSZ serialization and validation processes.
 - `eth-keys`: For working with Ethereum keys.
-- `eth-utils`: For utility functions related to Ethereum.
 - `milagro-bls-binding`: For BLS cryptographic operations.
 - `mnemonic`: For generating and validating BIP-39 mnemonics.
+- `setuptools`: For packaging and distributing Python projects, ensuring dependencies are properly handled and installed.
 
 Make sure you are using a Python version compatible with these dependencies (recommended: Python 3.8 or higher).
 
