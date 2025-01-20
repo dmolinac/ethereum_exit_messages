@@ -78,7 +78,7 @@ Current epoch on Holesky: 95362
 ```
 
 
-### 4.  `generate_ethereum_public_key_from_private_key.py`
+### 4.  `generate_ethereum_staker_public_key_from_private_key.py`
 This script generates an Ethereum **public key** from a given private key. It also compresses the public key using the **SHA-384** hashing algorithm for a compact representation.
 
 #### Usage
@@ -98,7 +98,7 @@ Displays the compressed public key (96 characters):
 Public Key (96 chars): <compressed_public_key>
 ```
 
-### 5.  `derive_ethereum_private_key_from_mnemonic.py`
+### 5.  `derive_ethereum_staker_private_key_from_mnemonic.py`
 This script derives an Ethereum **private key** from a given **mnemonic phrase** using the **BLS12-381** key derivation standard and a hierarchical derivation path.
 
 #### Usage
